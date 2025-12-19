@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phillnet Complete Life Studio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <linearGradient id="brandGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2f5bff" />
+                <stop offset="100%" stop-color="#6be7ff" />
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="url(#brandGradient)" stroke-width="6" />
+            <path d="M40 70 L60 40 L80 70" fill="none" stroke="url(#brandGradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="60" cy="60" r="6" fill="#e7ecff" />
+          </svg>
+        </div>
+        <div>
+          <h1>Phillnet Complete Life Studio</h1>
+          <p>Unified task planner + environment control</p>
+        </div>
+      </div>
+      <div class="status">
+        <span id="statusText">Ready</span>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <svg class="header-wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 60 C 200 120 400 0 600 60 C 800 120 1000 0 1200 60 V 120 H 0 Z" />
+      </svg>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Scenario</h2>
+        <div id="scenarioText" class="scroll"></div>
+      </section>
+
+      <section class="card">
+        <h2>Options</h2>
+        <div id="optionsList" class="options"></div>
+        <div class="planner-actions">
+          <button id="stepOptionBtn">Step With Option</button>
+        </div>
+      </section>
+
+      <section class="card planner">
+        <h2>Task Planner</h2>
+        <div class="planner-input">
+          <input id="planInput" type="text" placeholder="Add a step..." />
+          <button id="addPlanBtn">Add Step</button>
+        </div>
+        <div id="planList" class="plan-list"></div>
+        <div class="planner-actions">
+          <button id="removePlanBtn">Remove Selected</button>
+          <button id="clearPlanBtn">Clear Plan</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Robotics Context</h2>
+        <label>Perception</label>
+        <textarea id="perception"></textarea>
+        <label>Constraints</label>
+        <textarea id="constraints"></textarea>
+        <label>Resources</label>
+        <textarea id="resources"></textarea>
+        <div class="planner-actions">
+          <button id="stepPlanBtn" class="primary">Step With Plan</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>State Vectors</h2>
+        <div class="split">
+          <div>
+            <h3>Personality</h3>
+            <pre id="personalityText"></pre>
+          </div>
+          <div>
+            <h3>Social World</h3>
+            <pre id="socialText"></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Training Progress</h2>
+        <div class="metrics-grid">
+          <div>
+            <h3>Core Metrics</h3>
+            <pre id="metricsText"></pre>
+          </div>
+          <div>
+            <h3>Temporal Consistency</h3>
+            <div class="meter">
+              <div id="temporalBar" class="meter-fill"></div>
+            </div>
+            <div class="meter-label" id="temporalValue"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Reward Streams</h2>
+        <div class="reward-grid">
+          <div>
+            <h3>Extrinsic</h3>
+            <div id="rewardExtrinsic" class="sparkline"></div>
+          </div>
+          <div>
+            <h3>Intrinsic</h3>
+            <div id="rewardIntrinsic" class="sparkline"></div>
+          </div>
+          <div>
+            <h3>Temporal</h3>
+            <div id="rewardTemporal" class="sparkline"></div>
+          </div>
+          <div>
+            <h3>Causal</h3>
+            <div id="rewardCausal" class="sparkline"></div>
+          </div>
+          <div>
+            <h3>Meta</h3>
+            <div id="rewardMeta" class="sparkline"></div>
+          </div>
+          <div>
+            <h3>Emergent</h3>
+            <div id="rewardEmergent" class="sparkline"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card log">
+        <h2>Run Log</h2>
+        <pre id="logText"></pre>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

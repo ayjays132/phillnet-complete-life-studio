@@ -1,0 +1,281 @@
+:root {
+  --bg: #0f1115;
+  --card: #171a21;
+  --text: #e7ecff;
+  --muted: #9aa7ff;
+  --accent: #2f5bff;
+  --accent-hover: #3a67ff;
+  --border: #222738;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 10% 20%, #1b2030 0%, #0f1115 45%, #0b0d11 100%);
+  color: var(--text);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #0f1115;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.app-header p {
+  margin: 4px 0 0 0;
+  color: var(--muted);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.status button {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  background: #202532;
+  color: var(--text);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header-wave {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 40px;
+  fill: rgba(47, 91, 255, 0.15);
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 16px 24px 32px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.card h3 {
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.scroll,
+.options,
+.plan-list,
+pre {
+  background: #10141c;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.options button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.options button:hover,
+.options button.selected {
+  background: #202532;
+  border-color: var(--border);
+}
+
+.plan-item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.plan-item.selected,
+.plan-item:hover {
+  border-color: var(--border);
+  background: #202532;
+}
+
+.planner-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.planner-input input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #10141c;
+  color: var(--text);
+}
+
+.planner-input button,
+.planner-actions button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #202532;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.planner-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.primary {
+  background: var(--accent);
+  border-color: transparent;
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--accent-hover);
+}
+
+textarea {
+  width: 100%;
+  min-height: 70px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  background: #10141c;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  resize: vertical;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.meter {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #10141c;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2f5bff, #6be7ff);
+}
+
+.meter-label {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.reward-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sparkline {
+  height: 64px;
+  background: #10141c;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sparkline svg {
+  width: 100%;
+  height: 100%;
+}
+
+.log pre {
+  max-height: 280px;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .reward-grid {
+    grid-template-columns: 1fr;
+  }
+}

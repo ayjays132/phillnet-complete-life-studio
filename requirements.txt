@@ -1,0 +1,6 @@
+gymnasium
+datasets
+numpy
+torch
+transformers
+flask

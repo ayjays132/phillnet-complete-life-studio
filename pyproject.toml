@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phillnet-complete-life-studio"
+version = "0.1.0"
+description = "Phillnet Complete Life Studio Gym Environment"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Phillnet Dataset Creator" }]
+dependencies = [
+  "gymnasium",
+  "datasets",
+  "numpy",
+  "torch",
+  "transformers",
+  "flask",
+]
+
+[project.scripts]
+phillnet-studio-gui = "gui_task_planner:main"
+phillnet-studio-benchmark = "benchmark_text_action:main"
+phillnet-studio-web = "web_app:main"
